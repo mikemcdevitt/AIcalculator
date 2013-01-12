@@ -1,0 +1,15 @@
+
+/***** Academic Index Calculator *****/
+
+caption.conversionTitle {
+	text-align:center;
+}
+
+.conversionTable {
+	float:left;
+	padding-right:20px;
+}
+
+.conversionTable tr {
+	height:15px;
+}

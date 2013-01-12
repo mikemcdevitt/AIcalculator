@@ -1,0 +1,12 @@
+/source/nbproject/private/
+*.gif
+
+*.properties
+
+source/nbproject/project.xml
+
+source/lib/phpinfo.php
+
+source/lib/connect.php
+
+.DS_Store
