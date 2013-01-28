@@ -1,11 +1,13 @@
 // JavaScript Document
 
-function calculateSat(){
-	document.getElementById('satComposite').value = "worked.";
+function calculateSAT(){
+	document.getElementById('satComposite').value = 
+	+document.getElementById('satVerbal').value + +document.getElementById('satMath').value;
+	document.getElementById('satComposite').readOnly = true;
 };
 
 function getSatEquivalent(){
-	
+	document.getElementById('satEquivalent').value = satScores[actScores.indexOf(document.getElementById('actScore').value)];
 };
 
 function calculateAI(){

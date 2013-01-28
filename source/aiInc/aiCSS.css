@@ -1,0 +1,17 @@
+@charset "utf-8";
+.calcLabels {
+	float: left;
+	width: 12.5%;
+}
+.centered {
+	vertical-align:baseline;
+	padding-top:6px;
+}
+.calcLine {
+	height: 26px;
+	vertical-align:middle;
+}
+.calcInputs {
+	float: left;
+	width: 25%;
+}
