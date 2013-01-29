@@ -15,12 +15,12 @@ function calculateSAT(){
 	
     document.getElementById('satComposite').value = "";
     satMath = +document.getElementById('satMath').value;
-		if (satMath < 0 || satMath > 800) {
+		if (satMath <= 0 || satMath > 800) {
 			document.getElementById('satComposite').value = "Math score is not valid.";
 			satMath = 0;
 		}
     satVerbal = +document.getElementById('satVerbal').value;
-		if (satVerbal < 0 || satVerbal > 800) {
+		if (satVerbal <= 0 || satVerbal > 800) {
 			document.getElementById('satComposite').value = "Verbal score is not valid.";
 			satVerbal = 0;
 		}
@@ -43,8 +43,14 @@ function getSatEquivalent(){
     
     if (actScore < actScores[0] || actScore > "36")
         {
+			satScore = 0;
             document.getElementById('satEquivalent').value = "ACT Score is not valid.";
-        }
+			if ( satComposite > 0)
+			{
+				satScore = satComposite;
+			}
+            calculateAI();
+        } else
         {
             satScore = +satScores[actScores.indexOf(actScore)];
             document.getElementById('satEquivalent').value = satScore;
@@ -69,7 +75,7 @@ function calculateAI(){
             document.getElementById('aiResult').innerHTML = "Please give a valid high school GPA.";
         } else
     {
-		document.getElementById('aiResult').style = "color:";
+		document.getElementById('aiResult').style = "color:black";
         academicIndex = ( satScore / 20 ) + CSR + ( (satScore / 20 ) + CSR ) / 2;
 		document.getElementById('aiResult').innerHTML = academicIndex;
         //document.getElementById('aiResult').innerHTML = "hsGPA = " + hsGPA + "( " + satScore + "/ 20 ) + " + CSR + " + ( (" + satScore + " / 20 ) + " + CSR + " ) / 2 = " + academicIndex;  // debugging AI Calculation
