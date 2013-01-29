@@ -12,10 +12,19 @@ var weighted = false;
 var CSR;
 
 function calculateSAT(){
-    satMath = +document.getElementById('satMath').value;
-    satVerbal = +document.getElementById('satVerbal').value;
-    satComposite = satMath + satVerbal;
+	
     document.getElementById('satComposite').value = "";
+    satMath = +document.getElementById('satMath').value;
+		if (satMath < 0 || satMath > 800) {
+			document.getElementById('satComposite').value = "Math score is not valid.";
+			satMath = 0;
+		}
+    satVerbal = +document.getElementById('satVerbal').value;
+		if (satVerbal < 0 || satVerbal > 800) {
+			document.getElementById('satComposite').value = "Verbal score is not valid.";
+			satVerbal = 0;
+		}
+    satComposite = satMath + satVerbal;
     
     if (satMath > 0 && satVerbal > 0 )
         {
@@ -59,11 +68,11 @@ function calculateAI(){
             document.getElementById('aiResult').innerHTML = "Please give a valid high school GPA.";
         } else
     {
-        academicIndex = satScore / 10;
-        academicIndex = CSR;
+		document.getElementById('aiResult').style = "color:";
+        academicIndex = (satScore / 20) + CSR + ( (satScore / 20 ) + CSR ) / 2;
+        //academicIndex = CSR;
         document.getElementById('aiResult').innerHTML = academicIndex;
     }
         
-        
-            
+
 };

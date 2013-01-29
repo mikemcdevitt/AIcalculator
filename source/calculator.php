@@ -106,7 +106,7 @@ echo "\n";
         	<input type="text" id="hsGPA" title="High School GPA" onChange="calculateAI()"/>
         </div>
     	<div class="calcLine" >
-    		<input class="centered" type="checkbox" id="gpaWeighted" title="GPA Weighted" checked="false" onChange="calculateAI()" "/>
+    		<input type="checkbox" class="centered" id="gpaWeighted" title="GPA Weighted" onChange="calculateAI()" />
         </div>
 	</span>
 </div>
