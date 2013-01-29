@@ -9,4 +9,6 @@ source/lib/phpinfo.php
 
 source/lib/connect.php
 
+source/_notes/dwsync.xml
+
 .DS_Store
