@@ -32,7 +32,7 @@ echo "\n";
 </script>
 
 
-<h1>Academic Index Calculator</h1>
+<h1>Academic Index Calculator - TEST MODE - UNOFFICIAL DATA</h1>
 <div id="calculator" >
 <div id="testScores" style="height:100px">
 	<span class="calcLabels">
@@ -70,7 +70,7 @@ echo "\n";
     </span>
     <span class="calcInputs" >
     	<div class="calcLine" >
-        	<input type="text" id="hsGPA" title="High School GPA"/>
+        	<input type="text" id="hsGPA" title="High School GPA" onChange="calculateAI()"/>
         </div>
     	<div class="calcLine" >
     		<input class="centered" type="checkbox" id="gpaWeighted" title="GPA Weighted" />
