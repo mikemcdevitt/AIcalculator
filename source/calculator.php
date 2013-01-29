@@ -78,7 +78,7 @@ echo "\n";
 	</span>
 </div>
 	Academic Index:	
-<span id="aiResult"></span>
+<span id="aiResult" style="color:lightgray">Please enter valid ACT or SAT scores.</span>
 
 
 
