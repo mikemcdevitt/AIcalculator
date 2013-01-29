@@ -26,6 +26,39 @@ for ($i = 0; $i < count($satScoreArray); $i++) {
 }
 echo '"];';
 echo "\n";
+    
+echo 'var weightedGPAs = [';
+for ($i = 0; $i < count($wGpaLowerBoundArray); $i++) {
+	if ($i > 0) echo ', ';
+   	echo $wGpaLowerBoundArray[$i] ;
+}
+echo '];';
+echo "\n";
+
+echo 'var weightedCSRs = [';
+for ($i = 0; $i < count($wGpaCSRArray); $i++) {
+	if ($i > 0) echo ', ';
+   	echo $wGpaCSRArray[$i] ;
+}
+echo '];';
+echo "\n";
+
+echo 'var unweightedGPAs = [';
+for ($i = 0; $i < count($uwGpaLowerBoundArray); $i++) {
+	if ($i > 0) echo ', ';
+   	echo $uwGpaLowerBoundArray[$i] ;
+}
+echo '];';
+echo "\n";
+
+echo 'var unweightedCSRs = [';
+for ($i = 0; $i < count($uwGpaCSRArray); $i++) {
+	if ($i > 0) echo ', ';
+   	echo $uwGpaCSRArray[$i] ;
+}
+echo '];';
+echo "\n";
+
 ?>
 
 
@@ -73,7 +106,7 @@ echo "\n";
         	<input type="text" id="hsGPA" title="High School GPA" onChange="calculateAI()"/>
         </div>
     	<div class="calcLine" >
-    		<input class="centered" type="checkbox" id="gpaWeighted" title="GPA Weighted" />
+    		<input class="centered" type="checkbox" id="gpaWeighted" title="GPA Weighted" checked="false" onChange="calculateAI()" "/>
         </div>
 	</span>
 </div>

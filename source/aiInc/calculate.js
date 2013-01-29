@@ -6,6 +6,10 @@ var satComposite;
 var satEquivalent;
 var actScore;
 var satScore;
+var academicIndex;
+var hsGPA;
+var weighted = false;
+var CSR;
 
 function calculateSAT(){
     satMath = +document.getElementById('satMath').value;
@@ -40,8 +44,12 @@ function getSatEquivalent(){
 };
 
 function calculateAI(){
-    var hsGPA = +document.getElementById('hsGPA').value;
-    var academicIndex;
+    hsGPA = +document.getElementById('hsGPA').value;
+    weighted = document.getElementById('gpaWeighted').checked;
+    if (weighted)
+        CSR = weightedCSRs[weightedGPAs.indexOf(Math.floor(hsGPA * 10) / 10)];
+      else
+        CSR = unweightedCSRs[unweightedGPAs.indexOf(Math.floor(hsGPA * 10) / 10)];
     
     if(satScore < satScores[0] || satScore > "1600")
     {
@@ -52,6 +60,7 @@ function calculateAI(){
         } else
     {
         academicIndex = satScore / 10;
+        academicIndex = CSR;
         document.getElementById('aiResult').innerHTML = academicIndex;
     }
         
