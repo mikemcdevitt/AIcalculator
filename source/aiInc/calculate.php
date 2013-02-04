@@ -1,4 +1,9 @@
-<?php include_once('../lib/connect.php'); 
+<?php 
+// This file creates PHP variables from the MySQL database containing all of the
+// supporting data that is used by the Academic Index calculator.
+
+include_once('../lib/connect.php'); 
+
 $actQuery = "SELECT * FROM  `Ai_ACT_Conversion` ORDER BY `actComposite`";
 $unweightedQuery = "SELECT * FROM  `Ai_GPA_Unweighted` ORDER BY `lowerBound`";
 $weightedQuery = "SELECT * FROM  `Ai_GPA_Weighted` ORDER BY `lowerBound`";

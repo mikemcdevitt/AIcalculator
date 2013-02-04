@@ -12,17 +12,19 @@ var weighted = false;
 var CSR;
 
 function calculateSAT(){
-	
+
     document.getElementById('satComposite').value = "";
     satMath = +document.getElementById('satMath').value;
 		if (satMath <= 0 || satMath > 800) {
 			document.getElementById('satComposite').value = "Math score is not valid.";
 			satMath = 0;
+			checkOtherSatScore(satEquivalent);
 		}
     satVerbal = +document.getElementById('satVerbal').value;
 		if (satVerbal <= 0 || satVerbal > 800) {
 			document.getElementById('satComposite').value = "Verbal score is not valid.";
 			satVerbal = 0;
+			checkOtherSatScore(satEquivalent);
 		}
     satComposite = satMath + satVerbal;
     
@@ -69,17 +71,45 @@ function calculateAI(){
     
     if(satScore < satScores[0] || satScore > "1600")
     {
-		document.getElementById('aiResult').innerHTML = "Please give a valid test score.";
+		satNotValid();
     } else if (document.getElementById('hsGPA').value == "")
         {
             document.getElementById('aiResult').innerHTML = "Please give a valid high school GPA.";
         } else
     {
-		document.getElementById('aiResult').style = "color:black";
+		document.getElementById('aiResult').style.color = "";
         academicIndex = ( satScore / 20 ) + CSR + ( (satScore / 20 ) + CSR ) / 2;
-		document.getElementById('aiResult').innerHTML = academicIndex;
+		document.getElementById('aiResult').innerHTML = academicIndex + '<br/><a onclick="showCalculation()" >Click here for Academic Index Calculation.</a>';
+		
+
         //document.getElementById('aiResult').innerHTML = "hsGPA = " + hsGPA + "( " + satScore + "/ 20 ) + " + CSR + " + ( (" + satScore + " / 20 ) + " + CSR + " ) / 2 = " + academicIndex;  // debugging AI Calculation
     }
         
-
 };
+
+function satNotValid(){
+	document.getElementById('aiResult').innerHTML = "Please give a valid test score.";
+	document.getElementById('aiResult').style.color = "lightgray";
+};
+
+function checkOtherSatScore(sat){
+	if (sat > 530){
+		satScore = sat;
+		calculateAI();
+	} else satNotValid();
+};
+
+function showCalculation(){
+	alert(
+	//"Academic Index = " + hsGPA + "( " + satScore + "/ 20 ) + " + CSR + " + ( (" + satScore + " / 20 ) + " + CSR + " ) / 2 = " + academicIndex
+		"\nAcademic Index = SAT*/2 + CSR + ( (SAT/2) + CSR ) / 2"
+		+ "\nAcademic Index = 140/2 + 69 + ( (140/2) + 69 ) / 2"
+		+ "\nAcademic Index = 70 + 69 + ( 70 + 69 ) / 2"
+		+ "\nAcademic Index = 70 + 69 + 69.5"
+		+ "\nAcademic Index = 208.5"
+		+ "\n\nSAT* = Sum of critical reading and math SAT scores with "
+		+ "last zero dropped off to correlate to the 20 - 80 scale."
+
+		);
+}
+	
