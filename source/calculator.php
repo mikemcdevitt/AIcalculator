@@ -77,9 +77,22 @@ echo "\n";
     </span>
     <span class="calcInputs">
     	<div class="calcLine" >
-        	<input type="text" class="calcInput" id="satVerbal" title="SAT Verbal" onChange="calculateSAT()"/></div>
+        	<select class="calcInput" id="satVerbal" title="SAT Verbal" onChange="calculateSAT()">
+            	<option value="-">-</option>
+            <script type="text/javascript">
+				for (i = 20; i <= 80; i++)
+			document.write('<option value="' + i + '0">' + i + '0</option>');
+			</script>
+                </select>
+        </div>
     	<div class="calcLine" >
-        	<input type="text" class="calcInput" id="satMath" title="SAT Math" onChange="calculateSAT()"/></div>
+            <select class="calcInput" id="satMath" title="SAT Math" onChange="calculateSAT()">
+            	<option value="-">-</option>
+            <script type="text/javascript">
+				for (i = 20; i <= 80; i++)
+			document.write('<option value="' + i + '0">' + i + '0</option>');
+			</script>
+                </select></div>
     	<div class="calcLine" >
         	<input type="text" class="calcInput" id="satComposite" title="SAT Composite" value="-" readOnly="true" /></div>
 	</span>

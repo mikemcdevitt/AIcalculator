@@ -103,10 +103,10 @@ function showCalculation(){
 	alert(
 	//"Academic Index = " + hsGPA + "( " + satScore + "/ 20 ) + " + CSR + " + ( (" + satScore + " / 20 ) + " + CSR + " ) / 2 = " + academicIndex
 		"\nAcademic Index = SAT*/2 + CSR + ( (SAT/2) + CSR ) / 2"
-		+ "\nAcademic Index = 140/2 + 69 + ( (140/2) + 69 ) / 2"
-		+ "\nAcademic Index = 70 + 69 + ( 70 + 69 ) / 2"
-		+ "\nAcademic Index = 70 + 69 + 69.5"
-		+ "\nAcademic Index = 208.5"
+		+ "\nAcademic Index = " + satScore / 10 + "/2 + " + CSR + " + ( (" + satScore / 10 + "/2) + " + CSR + " ) / 2"
+		+ "\nAcademic Index = " + satScore / 20 + " + " + CSR + " + ( " + satScore / 20 + " + " + CSR + " ) / 2"
+		+ "\nAcademic Index = " + satScore / 20 + " + " + CSR + " + " + ((satScore / 20) + CSR) / 2 
+		+ "\nAcademic Index = " + academicIndex
 		+ "\n\nSAT* = Sum of critical reading and math SAT scores with "
 		+ "last zero dropped off to correlate to the 20 - 80 scale."
 
