@@ -102,7 +102,13 @@ echo "\n";
 	</span>
     <span class="calcInputs">
     	<div class="calcLine" >
-        	<input type="text" class="calcInput" id="actScore" title="ACT Composite" onChange="getSatEquivalent()"/>
+            <select class="calcInput" id="actScore" title="ACT Composite" onChange="getSatEquivalent()">
+            	<option value="-">-</option>
+            	<script type="text/javascript">
+				for (i = 11; i <= 36; i++)
+					document.write('<option value="' + i + '">' + i + '</option>');
+				</script>
+                </select>
         </div>
     	<div class="calcLine" >
     		<input type="text" class="calcInput" id="satEquivalent" title="SAT Equivalent" value="-" readonly/>
