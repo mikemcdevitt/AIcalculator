@@ -131,9 +131,9 @@ echo "\n";
         </div>
 	</span>
 </div>
-<div style="height:67px">
+<div style="height:67px; font-weight:bold">
 	Academic Index:	
-<span id="aiResult" style="color:lightgray; height:33px">Please enter valid ACT or SAT scores.
+<span id="aiResult" style="color:lightgray; height:33px; font-weight:bold">Please enter valid ACT or SAT scores.
 </span>
 </div>
 </div>

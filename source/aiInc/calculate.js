@@ -74,7 +74,8 @@ function calculateAI(){
 		satNotValid();
     } else if (document.getElementById('hsGPA').value == "")
         {
-            document.getElementById('aiResult').innerHTML = "Please give a valid high school GPA.";
+            document.getElementById('aiResult').innerHTML = "Please enter a valid high school GPA.";
+			document.getElementById('aiResult').style.color = "lightgray";
         } else
     {
 		document.getElementById('aiResult').style.color = "";
