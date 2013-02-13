@@ -10,6 +10,7 @@ var academicIndex;
 var hsGPA;
 var weighted = false;
 var CSR;
+var aiFloor = 183.0;
 
 function calculateSAT(){
 
@@ -80,8 +81,22 @@ function calculateAI(){
     {
 		document.getElementById('aiResult').style.color = "";
         academicIndex = ( satScore / 20 ) + CSR + ( (satScore / 20 ) + CSR ) / 2;
-		document.getElementById('aiResult').innerHTML = academicIndex + '<br/><a onclick="showCalculation()" >Click here for Academic Index Calculation.</a>';
+		academicIndex = Math.round(academicIndex * 10) / 10;
+		document.getElementById('aiResult').innerHTML = academicIndex;
 		
+		if (academicIndex >= aiFloor){ 										// if above the floor, green checkmark.
+			document.getElementById('aiResult').innerHTML += "<span style='color:green'> &#x2714; </span>"; 
+			// document.getElementById('aiResult').style.color = "green";   // makes the whole line green.
+		}	else{															// if below the floor, red X.
+			document.getElementById('aiResult').innerHTML += "<span style='color:red'> &#x2718; </span>";
+			
+			// document.getElementById('aiResult').style.color = "red";     // makes the whole line red.
+		}
+		document.getElementById('aiResult').innerHTML += '<br/><a onclick="showCalculation()" >Click here for Academic Index Calculation.</a>';
+		
+		if (isNaN(academicIndex)){											// usually this happens if you press
+			alert("Calculation error.  Please refresh the page.");			// back or forward in the browser.
+		}
 
         //document.getElementById('aiResult').innerHTML = "hsGPA = " + hsGPA + "( " + satScore + "/ 20 ) + " + CSR + " + ( (" + satScore + " / 20 ) + " + CSR + " ) / 2 = " + academicIndex;  // debugging AI Calculation
     }
