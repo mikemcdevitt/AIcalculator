@@ -77,7 +77,7 @@ echo "\n";
     </span>
     <span class="calcInputs">
     	<div class="calcLine" >
-        	<select class="calcInput" id="satVerbal" title="SAT Verbal" onChange="calculateSAT()">
+        	<select class="calcInput" id="satVerbal" title="SAT Verbal" onChange="calculateSAT(); resetData('actScore'); resetData('satEquivalent');">
             	<option value="-">-</option>
             <script type="text/javascript">
 				for (i = 20; i <= 80; i++)
@@ -86,7 +86,7 @@ echo "\n";
                 </select>
         </div>
     	<div class="calcLine" >
-            <select class="calcInput" id="satMath" title="SAT Math" onChange="calculateSAT()">
+            <select class="calcInput" id="satMath" title="SAT Math" onChange="calculateSAT(); resetData('actScore'); resetData('satEquivalent');">
             	<option value="-">-</option>
             <script type="text/javascript">
 				for (i = 20; i <= 80; i++)
@@ -102,7 +102,7 @@ echo "\n";
 	</span>
     <span class="calcInputs">
     	<div class="calcLine" >
-            <select class="calcInput" id="actScore" title="ACT Composite" onChange="getSatEquivalent()">
+            <select class="calcInput" id="actScore" title="ACT Composite" onChange="getSatEquivalent(); resetData('satMath'); resetData('satVerbal'); resetData('satComposite');">
             	<option value="-">-</option>
             	<script type="text/javascript">
 				for (i = 11; i <= 36; i++)

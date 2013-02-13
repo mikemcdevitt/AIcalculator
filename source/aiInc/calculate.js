@@ -99,6 +99,12 @@ function checkOtherSatScore(sat){
 	} else satNotValid();
 };
 
+function resetData(id){
+	document.getElementById(id).value = "-";
+};
+
+
+
 function showCalculation(){
 	alert(
 	//"Academic Index = " + hsGPA + "( " + satScore + "/ 20 ) + " + CSR + " + ( (" + satScore + " / 20 ) + " + CSR + " ) / 2 = " + academicIndex
@@ -111,5 +117,4 @@ function showCalculation(){
 		+ "last zero dropped off to correlate to the 20 - 80 scale."
 
 		);
-}
-	
+};
